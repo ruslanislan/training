@@ -1,8 +1,8 @@
-import UIKit
 import Foundation
 
 var greeting = "Hello, playground"
 
+// First task
 func spinWords(in sentence: String) -> String {
     let list: [String] = sentence.split(separator: " ").map(String.init)
     if list.count == 1 {
@@ -10,7 +10,6 @@ func spinWords(in sentence: String) -> String {
             return String(sentence.reversed())
         }
         return sentence
-        
     }
     
     var message: String = ""
@@ -21,9 +20,7 @@ func spinWords(in sentence: String) -> String {
         } else {
             message += str
         }
-        
         message += " "
-        
     }
     
     message.removeLast()
@@ -31,8 +28,10 @@ func spinWords(in sentence: String) -> String {
     return message
 }
 
-spinWords(in: "This sentence is a sentence")
+//spinWords(in: "This sentence is a sentence")
 
+
+// Second task
 func descendingOrder(of number: Int) -> Int {
     return Int(Array(String(number))
         .map { String($0) }
@@ -40,8 +39,10 @@ func descendingOrder(of number: Int) -> Int {
         .joined())!
 }
 
-descendingOrder(of: 4433232)
+//descendingOrder(of: 4433232)
 
+
+//Third task
 func repeatStr(_ n: Int, _ string: String) -> String {
     var message = ""
     if n <= 0 {
@@ -53,8 +54,9 @@ func repeatStr(_ n: Int, _ string: String) -> String {
     return message
 }
 
-repeatStr(6, "I")
+//repeatStr(6, "I")
 
+//Fourth task
 func findIt(_ seq: [Int]) -> Int {
     var dict: [Int: Int] = [:]
     for i in seq {
@@ -69,8 +71,9 @@ func findIt(_ seq: [Int]) -> Int {
     return 0
 }
 
-findIt([1,1,1,1,0, 0, 1])
+//findIt([1,1,1,1,0, 0, 1])
 
+//Fifth task
 func findSum(_ n: Int) -> Int {
     var sum = 0;
     for i in 0...n {
@@ -81,11 +84,43 @@ func findSum(_ n: Int) -> Int {
     return sum
 }
 
-findSum(10)
+//findSum(10)
 
+//Sixth task
 func sumOfTwoSmallestIntegersIn(_ array: [Int]) -> Int {
     array.sorted(by: <).prefix(2).reduce(0, +)
 }
 
-sumOfTwoSmallestIntegersIn([19, 5, 42, 2, 77])
+//sumOfTwoSmallestIntegersIn([19, 5, 42, 2, 77])
 
+//Seventh task
+func find_short(_ str: String) -> Int
+{
+    str.split(separator: " ").map(String.init).compactMap{$0.count}.sorted().first!
+}
+
+//find_short("bitcoin take over the world maybe who knows perhaps")
+
+//Eighth task
+func squareDigits(_ num: Int) -> Int {
+    Int(String(num)
+        .compactMap { Int(String($0)) }
+        .compactMap { String($0 * $0) }
+        .joined()) ?? 0
+}
+
+//squareDigits(9119)
+
+// Ninth task
+func summation(_ n: Int) -> Int {
+   (0...n).reduce(0, +)
+}
+
+//summation(8)
+
+//Tenth
+func digitize(_ num:Int) -> [Int] {
+    String(num).compactMap{ Int(String($0)) }.reversed()
+}
+
+digitize(123)
